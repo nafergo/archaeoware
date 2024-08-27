@@ -42,33 +42,23 @@ SEARCH & FILTERS
     bottom: 0;
     background: #fff;
     padding: 1px 20px;
-    border-right: 1px solid #DADADA;
-    background: url(img/top_bg.png);
-    background-repeat: no-repeat;
-    background-size: 100%;*/
+    border-right: 1px solid #DADADA;*/
 }
-
-
-.top_bg {
-margin-top: -1em;
-width: 100%;
-
-}
-
-.sidebar-header {
-/*    background: #4776E6; */
+.sidebar .title {
+    margin: -1px -20px 20px;
+    background: #4776E6;
+    color: #fff; 
+    padding: 20px;
     min-height: 79px;
 }
 
-a.sidebarlink:hover {text-decoration: none;}
-
-.sidebar-menu {
-/*    background: #4776E6; */
+.sidebar .subtitle {
+    margin: -20px -20px 20px;
+    background: #4776E6;
+    color: #fff; 
+    padding: 20px;
     min-height: 79px;
 }
-
-.sidebarmodal {margin-right: 1em;}
-
 
 #search {
     margin: 0.5em 0;
@@ -89,7 +79,7 @@ a.sidebarlink:hover {text-decoration: none;}
     text-transform: uppercase;
     background: transparent;
     color: #999;
-    font-size: 1em;
+    font-size: .7em;
     letter-spacing: .1em;
     cursor: pointer;
     display: block;
@@ -101,19 +91,17 @@ a.sidebarlink:hover {text-decoration: none;}
     padding: 10px 10px 10px 30px;
     white-space: normal;
     transition: all 0.25s ease;
-    font-weight: 900;
-
 }
 .service .btn {
     white-space: normal !important;
 }
 .service-filter:before {
     position: absolute;
-    content:"\e157";
-    font-family: 'Glyphicons Halflings';
-    font-weight: normal;
-    left: .5em;
-
+    font-family: FontAwesome;
+    content: "\f096";
+    font-size: 2em;
+    top: 0.25em;
+    left: 0.25em;
 }
 .service-filter:hover {
     color: #777;
@@ -123,22 +111,19 @@ a.sidebarlink:hover {text-decoration: none;}
 }
 .service-filter.active {
     font-weight: 900;
-/*    background-color: #4776E6; */
-    background-color: #b92022;
-    border-color: #b92022;
+    background-color: #4776E6;
+    border-color: #4776E6;
     color: white;
     transition: all 0.25s ease;
 }
 .service-filter.active:before {
-  content:"\e067";
-  font-family: 'Glyphicons Halflings';
-  color: white;
-  font-weight: normal;
-  left: .5em;
-
+    font-family: FontAwesome;
+    content: "\f046";
+    color: white;
 }
 
-.copynotice {margin: 5px 20px;}
+.sidebar-footer {margin-bottom: 10px; position: fixed;   bottom: 0;}
+
 
 /* + + + + + + + + + + +
 
@@ -208,8 +193,6 @@ content:"\e253";
  font-family: 'Glyphicons Halflings';
 }
 
-.more-info-fix{ line-height: 1.3em;}
-
 /* + + + + + + + + + + +
 
 LOADING SPINNER
@@ -266,7 +249,7 @@ TYPEAHEAD
     color: #fff;
 }
 
-/* Mobile
+/* Mobile */
 
 @media (max-width: 600px) {
     .sidebar {
@@ -276,4 +259,3 @@ TYPEAHEAD
         left: 175px;
     }
 }
-*/

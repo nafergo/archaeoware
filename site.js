@@ -180,7 +180,7 @@ function handleService(service, counter) {
     var serviceHeader = document.createElement('div');
     var requiredInfo = document.createElement('div');
     var additionalInfo = document.createElement('div');
-    var showMoreButton = '<a data-toggle="collapse" class="btn btn-default more-info more-info-fix collapsed" data-target="#additional-services-' + counter + '"> </a>'
+    var showMoreButton = '<a data-toggle="collapse" class="btn btn-default more-info collapsed" data-target="#additional-services-' + counter + '"> </a>'
 
     serviceElem.className = 'service ' + sanitize(serviceType);
     serviceHeader.className = 'title col-md-6';
@@ -210,74 +210,58 @@ function handleService(service, counter) {
 
     serviceHeader.innerHTML = '<h1>' + service['Name'] + '</h1>';
     serviceHeader.innerHTML += '<p class="type">' + service['Type'] + '</p>';
-    serviceHeader.innerHTML += '<p class="text-uppercase"><small>' + service['Tag1'] +'</small>    <small>' + service['Tag2'] +'</small>   <small>' + service['Tag3'] +'</small>   <small>' + service['Tag4'] +'</small>   <small>' + service['Tag5'] +'</small></p><br>';
+    serviceHeader.innerHTML += '<p class="text-uppercase"><small>' + service['Tags'] + '</small></p><br>';      
     $(requiredInfo).append(serviceHeader);
     $(requiredInfo).append(requiredInfoButtons);
-
+      
 //    for (key in service) {
 
         if(service['Name']) {
         additionalInfo.innerHTML += '<div class="name col-md-12 hidden-xs hidden-sm hidden-md hidden-lg"><strong>NAME</strong><p>' + service['Name'] + '</p></div>';
-    }
+    }        
 
         if(service['Type']) {
         additionalInfo.innerHTML += '<div class="name col-md-12 hidden-xs hidden-sm hidden-md hidden-lg"><strong>TYPE</strong><p>' + service['Type'] + '</p></div>';
-    }
+    }        
 
-        if(service['Tag1']) {
-        additionalInfo.innerHTML += '<div class="name col-md-12 hidden-xs hidden-sm hidden-md hidden-lg"><strong>TAGS</strong><p>' + service['Tag1'] + '</p></div>';
-    }
-
-        if(service['Tag2']) {
-        additionalInfo.innerHTML += '<div class="name col-md-12 hidden-xs hidden-sm hidden-md hidden-lg"><strong>TAGS</strong><p>' + service['Tag2'] + '</p></div>';
-    }
-
-        if(service['Tag3']) {
-        additionalInfo.innerHTML += '<div class="name col-md-12 hidden-xs hidden-sm hidden-md hidden-lg"><strong>TAGS</strong><p>' + service['Tag3'] + '</p></div>';
-    }
-
-        if(service['Tag4']) {
-        additionalInfo.innerHTML += '<div class="name col-md-12 hidden-xs hidden-sm hidden-md hidden-lg"><strong>TAGS</strong><p>' + service['Tag4'] + '</p></div>';
-    }
-
-        if(service['Tag5']) {
-        additionalInfo.innerHTML += '<div class="name col-md-12 hidden-xs hidden-sm hidden-md hidden-lg"><strong>TAGS</strong><p>' + service['Tag5'] + '</p></div>';
-    }
+        if(service['Tags']) {
+        additionalInfo.innerHTML += '<div class="name col-md-12 hidden-xs hidden-sm hidden-md hidden-lg"><strong>TAGS</strong><p>' + service['Tags'] + '</p></div>';
+    }        
 
         if(service['Description']) {
         additionalInfo.innerHTML += '<div class="name col-md-12"><strong>DESCRIPTION</strong><p>' + service['Description'] + '</p></div>';
-    }
+    }        
 
         if(service['Image']) {
-        additionalInfo.innerHTML += '<div class="name col-md-12"><strong></strong><p><img src="' + (service['Image']) + '" class="image_service img-responsive"></p></div>';
-    }
-
+        additionalInfo.innerHTML += '<div class="name col-md-12"><strong></strong><p><img src="' + (service['Image']) + '" class="image_service"></p></div>';
+    }              
+      
         if(service['URL']) {
-        additionalInfo.innerHTML += '<div class="name col-xs-12 col-md-6"><strong>URL</strong><p><a href="' + (service['URL']) + '" target="_blank" class="">' + service['URL'] + '</a></p></div>';
-    }
-
+        additionalInfo.innerHTML += '<div class="name col-md-12"><strong>URL</strong><p><a href="' + (service['URL']) + '" target="_blank" class="">' + service['URL'] + '</a></p></div>';
+    }        
+      
         if(service['Status']) {
-        additionalInfo.innerHTML += '<div class="name col-xs-6 hidden-xs hidden-sm hidden-md hidden-lg"><strong>STATUS</strong><p>' + service['Status'] + '</p></div>';
-    }
+        additionalInfo.innerHTML += '<div class="name col-md-12 hidden-xs hidden-sm hidden-md hidden-lg"><strong>STATUS</strong><p>' + service['Status'] + '</p></div>';
+    }        
 
         if(service['OS']) {
-        additionalInfo.innerHTML += '<div class="name col-xs-6"><strong>OPERATING SYSTEM</strong><p>' + service['OS'] + '</p></div>';
-    }
+        additionalInfo.innerHTML += '<div class="name col-md-12"><strong>OPERATING SYSTEM</strong><p>' + service['OS'] + '</p></div>';
+    }        
 
         if(service['Latest release']) {
-        additionalInfo.innerHTML += '<div class="name col-xs-6"><strong>LATEST RELEASE</strong><p>' + service['Latest release'] + '</p></div>';
-    }
+        additionalInfo.innerHTML += '<div class="name col-md-12"><strong>LATEST RELEASE</strong><p>' + service['Latest release'] + '</p></div>';
+    }        
 
-
-
-
+        
+        
+        
 //      if (service[key].length > 0 && key != 'Organization Name' && service[key] != 'N/A' && service[key] != 'N/a') {
 //        additionalInfo.innerHTML += '<p class="'+key+' col-md-12"><strong>' + key + '</strong><br>' + service[key] + '</p>';
-//      }
-
-//    }
-
-
+//      }        
+        
+//    }      
+      
+      
     document.getElementById('services-list').appendChild(serviceElem);
   }
 }
